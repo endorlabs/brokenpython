@@ -2,7 +2,7 @@
 
 ## The Task
 
-- **CVE-2020-14343** impact PyYAML.
+- **CVE-2017-18342** affects PyYAML.
 - Your application is using a vulnerable version of **PyYAML**.
 - Security is telling you **to upgrade PyYAML**.
 - **After upgrading, your app is broken.**
@@ -16,7 +16,7 @@
 ## What You Have  
 
 - `app.py` – Your YAML loader.  
-- `config.yaml` – A simple config file.  
+- `exploit.py` – A proof-of-concept exploit.  
 - **A security advisory telling you to upgrade.**  
 
 ## What You Don’t Have  
@@ -28,10 +28,11 @@
 
 1. **Install the old PyYAML version.**  
 2. **Run the app and confirm it works.**  
-3. **Upgrade PyYAML.**  
-4. **Watch it break.**  
-5. **Figure out why it broke.**  
-6. **Fix it.**  
+3. **Run the exploit to confirm vulnerability.**  
+4. **Upgrade PyYAML.**  
+5. **Watch it break.**  
+6. **Figure out why it broke.**  
+7. **Fix it.**  
 
 ### **Once You’re Done**  
 
