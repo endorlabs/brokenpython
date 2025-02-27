@@ -135,3 +135,12 @@ In this case, the fix was one line. In a real-world project, it could be much wo
 
 - [CVE-2020-14343 - PyYAML Unsafe Deserialization](https://nvd.nist.gov/vuln/detail/CVE-2020-14343)
 - [PyYAML 5.4 Breaking Change - Official Docs](https://github.com/yaml/pyyaml/blob/master/CHANGES)
+
+
+## TIPS
+
+Use: the following command to check what PyYaml version you are running.
+
+```
+python -c "import yaml; print(yaml.__version__)"
+```

