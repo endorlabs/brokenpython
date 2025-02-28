@@ -41,6 +41,12 @@
     source venv/bin/activate
     ```
 
+- You can check if the application is functioning properly by using the `/heatlh` route.
+
+   ```bash
+   curl http://127.0.0.1:5000/health
+   ```
+
 ## What You Don’t Have  
 
 - **Any real context on why this matters.**  
