@@ -1,6 +1,6 @@
 # PyYAML Security Issue  
 
-## The Task
+## The Task: Update some legacy code
 
 - **CVE-2017-18342** affects PyYAML.
 - Your application is using a vulnerable version of **PyYAML**.
@@ -19,10 +19,32 @@
 - `exploit.py` – A proof-of-concept exploit.  
 - **A security advisory telling you to upgrade.**  
 
+
+## What your team is telling you?
+
+- The code requires Python 3.8.
+
+   ```bash
+   sudo apt install python3.8 python3.8-venv -y
+   ```
+- You probably need to actually setup Python 3.8 by connecting to a personal package archive for python 3.8 because that was released before COVID and you know software happens quick.
+
+   ```bash
+   sudo add-apt-repository ppa:deadsnakes/ppa -y
+   sudo apt update
+   ```
+
+- Do it in a virtual environment or you're gonna have a bad time.
+
+    ```bash
+    python3.8 -m venv venv
+    source venv/bin/activate
+    ```
+
 ## What You Don’t Have  
 
 - **Any real context on why this matters.**  
-- **Any clear instructions on what will break.**  
+- **Any clear instructions on how much effort this will be**  
 
 ## What You Need to Do  
 

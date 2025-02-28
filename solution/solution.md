@@ -25,8 +25,15 @@ To resolve this issue, you will:
    ```bash
    sudo apt install python3.8 python3.8-venv -y
    ```
+   You probably need to actually setup Python 3.8 by connecting to a personal package archieve. 
 
+   ```bash
+   sudo add-apt-repository ppa:deadsnakes/ppa -y
+   sudo apt update
+   ```
 2. **Clone the Repository**:
+
+   You don't need to do this if you are in CodeSpaces.
 
    ```bash
    git clone https://github.com/endorlabs/brokenpython.git
@@ -40,7 +47,7 @@ To resolve this issue, you will:
    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
    ```
 
-4. **Verify Installed Python Version**:
+4. **Verify Installed Python Version in the Virtual Environment**:
 
    ```bash
    python --version
