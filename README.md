@@ -71,3 +71,8 @@ Ask yourself:
 - **What would make this easier for developers?**  
 
 This is what developers deal with every day. Security teams need to **see the friction** before they demand fixes.
+
+
+# Give up or wanna cheat?
+
+Navigate to the solution folder and find `solution.md` for step by step instructions. 
