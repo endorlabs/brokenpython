@@ -75,7 +75,19 @@ To resolve this issue, you will:
 
 2. **Test the Application**: Open a browser and navigate to `http://127.0.0.1:5000/`. You should see the application's interface.
 
-3. **Run the Exploit Script**: In a new terminal (with the virtual environment activated), execute:
+   - You can curl just to see the webpage.
+
+   ```bash
+   curl http://127.0.0.1:5000
+   ```
+
+   - You should also check the `/health` route for a health check
+  
+   ```bash
+   curl http://127.0.0.1:5000/health
+   ```
+
+4. **Run the Exploit Script**: In a new terminal (with the virtual environment activated), execute:
 
    ```bash
    python exploit.py
@@ -123,6 +135,12 @@ To resolve this issue, you will:
    ```bash
    python app.py
    ```
+2. Perform the health check:
+
+   ```bash
+   curl http://127.0.0.1:5000/health
+   ```
+   
    **Expected Error**:
    ```plaintext
    TypeError: load() missing 1 required positional argument: 'Loader'
@@ -133,7 +151,7 @@ To resolve this issue, you will:
 
 ## Step 5: Fix the Application Code
 
-1. **Modify **``: Open `app.py` and locate the line:
+1. Open `app.py` and locate the line:
 
    ```python
    parsed_data = yaml.load(yaml_input)  # This will break after upgrading
@@ -144,10 +162,22 @@ To resolve this issue, you will:
    ```python
    parsed_data = yaml.safe_load(yaml_input)  # Safe and works with PyYAML 5.1+
    ```
+   
+   Also modify the health check endpoint similarly
+
+   ```python
+   parsed_data = yaml.load(test_yaml)
+   ```
+
+   Replace it with:
+
+   ```python
+   parsed_data = yaml.safe_load(test_yaml)
+   ```
 
    The `safe_load` function prevents execution of arbitrary code and is compatible with newer PyYAML versions.
 
-2. **Save the Changes**.
+1. **Save the Changes**.
 
 ---
 
@@ -183,7 +213,7 @@ To resolve this issue, you will:
    curl http://127.0.0.1:5000/health
    ```
 
-   If the fix is applied correctly, you should see a successful response.
+   If the fix is applied correctly, you should see a successful response. Remember that you have to apply `safe_load` in both routes and if you do not apply it to the health check this will still fail.
 
 ---
 
