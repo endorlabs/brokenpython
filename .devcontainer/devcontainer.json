@@ -3,7 +3,9 @@
 {
 	"name": "Debian",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/base:bullseye"
+	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
+	"postStartCommand": "curl https://api.endorlabs.com/download/endorlabs/v1.7.198/binaries/endorctl_v1.7.198_linux_amd64 -o endorctl && chmod +x ./endorctl && alias endorctl='$PWD/endorctl'"
+
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
