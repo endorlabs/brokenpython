@@ -3,7 +3,7 @@
 {
 	"name": "Lab",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"postStartCommand": "curl https://api.endorlabs.com/download/endorlabs/v1.7.198/binaries/endorctl_v1.7.198_linux_amd64 -o endorctl && chmod +x ./endorctl && sudo touch /etc/machine-id"
+	"postStartCommand": "curl https://api.endorlabs.com/download/endorlabs/v1.7.203/binaries/endorctl_v1.7.203_linux_amd64 -o endorctl && chmod +x ./endorctl && sudo touch /etc/machine-id"
 
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
